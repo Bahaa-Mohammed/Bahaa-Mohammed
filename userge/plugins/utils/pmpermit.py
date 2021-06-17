@@ -252,7 +252,7 @@ async def uninvitedPmHandler(message: Message):
     if message.from_user.is_verified:
         return
     if message.from_user.id in pmCounter:
-        if pmCounter[message.from_user.id] > 0:
+        
             del pmCounter[message.from_user.id]
             await message.reply(
                 blocked_message.format_map(SafeDict(**user_dict))
@@ -261,11 +261,8 @@ async def uninvitedPmHandler(message: Message):
             await asyncio.sleep(1)
             await CHANNEL.log(
                 f"#BLOCKED\n{user_dict['mention']} has been blocked due to spamming in pm !! ")
-        else:
-            pmCounter[message.from_user.id] += 1
-            await message.reply(
-                f"You have {pmCounter[message.from_user.id]} out of 4 **Warnings**\n"
-                "Please wait until you get approved to pm !", del_in=5)
+     
+
     else:
         pmCounter.update({message.from_user.id: 1})
         if userge.has_bot and _IS_INLINE:
