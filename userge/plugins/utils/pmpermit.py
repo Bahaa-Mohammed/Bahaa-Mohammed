@@ -253,7 +253,7 @@ async def uninvitedPmHandler(message: Message):
         return
     if message.from_user.id in pmCounter:
         
-            del pmCounter[message.from_user.id]
+           
             await message.reply(
                 blocked_message.format_map(SafeDict(**user_dict))
             )
@@ -264,7 +264,7 @@ async def uninvitedPmHandler(message: Message):
      
 
     else:
-        pmCounter.update({message.from_user.id: 1})
+      
         if userge.has_bot and _IS_INLINE:
             try:
                 bot_username = (await userge.bot.get_me()).username
