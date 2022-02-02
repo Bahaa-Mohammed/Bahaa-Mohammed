@@ -278,10 +278,10 @@ async def uninvitedPmHandler(message: Message):
                 )
             except (IndexError, BotInlineDisabled):
                 await message.reply(
-                    noPmMessage.format_map(SafeDict(**user_dict)) + '\n`Protected by Русская девушка 🇷🇺`')
+                    noPmMessage.format_map(SafeDict(**user_dict)) + '\n`Protected by Bahaa Mohammed ʚʬɞ`')
         else:
             await message.reply(
-                noPmMessage.format_map(SafeDict(**user_dict)) + '\n`Русская девушка 🇷🇺`')
+                noPmMessage.format_map(SafeDict(**user_dict)) + '\n`Protected by Bahaa Mohammed ʚʬɞ`')
         await asyncio.sleep(1)
         await CHANNEL.log(f"#NEW_MESSAGE\n{user_dict['mention']} has messaged you")
 
